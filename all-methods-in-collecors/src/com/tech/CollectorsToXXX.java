@@ -8,10 +8,9 @@ import java.util.stream.Collectors;
 public class CollectorsToXXX {
 	public static void main(String[] args) {
 		List<Employee> employees = EmployeeProvider.getEmployees();
-
-		int size = employees.size();
-		System.out.println("Actual Size: " + size);
-
+		
+		//syntax
+		
 		/*
 		 * public static <T, C extends java.util.Collection>
 		 * java.util.stream.Collector<T, ?, C>
@@ -21,6 +20,9 @@ public class CollectorsToXXX {
 		 * 
 		 * public static java.util.stream.Collector<T, ?, java.util.Set> toSet();
 		 */
+		
+		
+		//Implemnetation
 		ArrayList<Employee> collectByCustomCollection = employees.stream()
 				.collect(Collectors.toCollection(ArrayList::new));
 		System.out.println("toCollection \t" + collectByCustomCollection);
@@ -30,28 +32,6 @@ public class CollectorsToXXX {
 		
 		Set<Employee> collectBySet = employees.stream().collect(Collectors.toSet());
 		System.out.println("toSet\t" + collectBySet);
-
-		/*
-		 * public static java.util.stream.Collector<java.lang.CharSequence, ?,
-		 * java.lang.String> joining();
-		 * 
-		 * public static java.util.stream.Collector<java.lang.CharSequence, ?,
-		 * java.lang.String> joining(java.lang.CharSequence);
-		 * 
-		 * public static java.util.stream.Collector<java.lang.CharSequence, ?,
-		 * java.lang.String> joining(java.lang.CharSequence, java.lang.CharSequence,
-		 * java.lang.CharSequence);
-		 */
-		String joining = employees.stream().map(Employee::getName).collect(Collectors.joining());
-		System.out.println("joining()\t" + joining);
-		
-		String joiningByComma = employees.stream().map(Employee::getName).collect(Collectors.joining(","));
-		System.out.println("joining(CharSequence delimiter)\t" + joiningByComma);
-		
-		String joiningByPrefixAndSufix = employees.stream().map(Employee::getName)
-				.collect(Collectors.joining(",", "Start -> ", "<-End"));
-		System.out.println("joining(CharSequence delimiter, CharSequence prefix, CharSequence suffix)\t"
-				+ joiningByPrefixAndSufix);
 
 	}
 }
