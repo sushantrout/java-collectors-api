@@ -40,4 +40,7 @@
   <li>public static <T> java.util.stream.Collector<T, ?, java.util.IntSummaryStatistics> summarizingInt(java.util.function.ToIntFunction<? super T>);<br><br></li>
   <li>public static <T> java.util.stream.Collector<T, ?, java.util.LongSummaryStatistics> summarizingLong(java.util.function.ToLongFunction<? super T>);<br><br></li>
   <li>public static <T> java.util.stream.Collector<T, ?, java.util.DoubleSummaryStatistics> summarizingDouble(java.util.function.ToDoubleFunction<? super T>);<br><br></li>
+  <li>public static <T, U, A, R> java.util.stream.Collector<T, ?, R> flatMapping(java.util.function.Function<? super T, ? extends java.util.stream.Stream<? extends U>>, java.util.stream.Collector<? super U, A, R>);<br><br></li>
+  <li>public static <T, A, R> java.util.stream.Collector<T, ?, R> filtering(java.util.function.Predicate<? super T>, java.util.stream.Collector<? super T, A, R>);<br><br></li>
+  <li>public static <T, R1, R2, R> java.util.stream.Collector<T, ?, R> teeing(java.util.stream.Collector<? super T, ?, R1>, java.util.stream.Collector<? super T, ?, R2>, java.util.function.BiFunction<? super R1, ? super R2, R>);<br><br></li>
   </ol>
