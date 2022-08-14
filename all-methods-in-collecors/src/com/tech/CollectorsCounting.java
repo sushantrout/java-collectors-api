@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 public class CollectorsCounting {
 	public static void main(String[] args) {
 		List<Employee> employees = EmployeeProvider.getEmployees();
+		
+		/* public static java.util.stream.Collector counting(); */
 		Long collect = employees.stream().collect(Collectors.counting());
 		System.out.println("Size of list = " + collect);
 		
