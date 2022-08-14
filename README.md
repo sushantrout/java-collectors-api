@@ -1,10 +1,4 @@
 # java8-collectors-api
-
-  static final java.util.Set<java.util.stream.Collector$Characteristics> CH_CONCURRENT_ID;
-  static final java.util.Set<java.util.stream.Collector$Characteristics> CH_CONCURRENT_NOID;
-  static final java.util.Set<java.util.stream.Collector$Characteristics> CH_ID;
-  static final java.util.Set<java.util.stream.Collector$Characteristics> CH_UNORDERED_ID;
-  static final java.util.Set<java.util.stream.Collector$Characteristics> CH_NOID;
   public static <T, C extends java.util.Collection<T>> java.util.stream.Collector<T, ?, C> toCollection(java.util.function.Supplier<C>);
   public static <T> java.util.stream.Collector<T, ?, java.util.List<T>> toList();
   public static <T> java.util.stream.Collector<T, ?, java.util.Set<T>> toSet();
@@ -44,6 +38,4 @@
   public static <T> java.util.stream.Collector<T, ?, java.util.IntSummaryStatistics> summarizingInt(java.util.function.ToIntFunction<? super T>);
   public static <T> java.util.stream.Collector<T, ?, java.util.LongSummaryStatistics> summarizingLong(java.util.function.ToLongFunction<? super T>);
   public static <T> java.util.stream.Collector<T, ?, java.util.DoubleSummaryStatistics> summarizingDouble(java.util.function.ToDoubleFunction<? super T>);
-  static java.util.function.Function access$000();
-  static {};
 }
