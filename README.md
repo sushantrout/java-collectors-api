@@ -1,4 +1,4 @@
-# java8-collectors-api
+# java-8-collectors-api
 <ol>
 
 <li>public static <T, C extends java.util.Collection<T>> java.util.stream.Collector<T, ?, C> toCollection(java.util.function.Supplier<C>);<br><br></li>
