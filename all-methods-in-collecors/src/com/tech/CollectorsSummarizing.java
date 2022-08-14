@@ -2,6 +2,7 @@ package com.tech;
 
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CollectorsSummarizing {
@@ -20,8 +21,9 @@ public class CollectorsSummarizing {
 		 */
 		
 		IntSummaryStatistics collect = employees.stream()
-				.collect(Collectors.collectingAndThen(Collectors.mapping(Employee::getAge, Collectors.toList()),
-						d -> d.stream().collect(Collectors.summarizingInt(Number::intValue))));
+				.collect(Collectors.collectingAndThen(Collectors.mapping(Employee::getAge,
+						Collectors.summarizingInt(Number::intValue)),
+						Function.identity()));
 
 		System.out.println(collect);
 
