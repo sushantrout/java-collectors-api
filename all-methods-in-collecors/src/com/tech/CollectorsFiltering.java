@@ -1,5 +1,6 @@
 package com.tech;
 
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -13,11 +14,11 @@ public class CollectorsFiltering {
 		 * Object, List<Integer>> downstream)
 		 */
 		
-		Map<Integer, List<Integer>> collect = employees.stream().collect(
+		Map<Integer, IntSummaryStatistics> collect = employees.stream().collect(
 				Collectors.groupingBy(Employee::getId,
-						Collectors.filtering(d -> d.getId() < 10, 
+						Collectors.filtering(d -> d.getId() < 200, 
 								Collectors.mapping(Employee::getAge, 
-										Collectors.toList()))));
+										Collectors.summarizingInt(Integer::valueOf)))));
 
 		collect.forEach((k, v) -> {
 			System.out.println(k + "\t=> " + v);
