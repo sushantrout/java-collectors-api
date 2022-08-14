@@ -41,7 +41,7 @@ public class CollectorSummingAndAverageDetails {
 		 * averagingDouble(java.util.function.ToDoubleFunction);
 		 */
 		
-		System.out.println("Average");
+		System.out.println("\nAverage");
 		Map<String, Double> averages = employees.stream()
 				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingInt(Employee::getAge)));
 		
