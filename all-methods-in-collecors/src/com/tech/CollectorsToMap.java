@@ -32,10 +32,11 @@ public class CollectorsToMap {
 		System.out.println(collect);
 
 		/*
-		 * public static > java.util.stream.Collector toMap(java.util.function.Function,
-		 * java.util.function.Function, java.util.function.BinaryOperator,
-		 * java.util.function.Supplier);
+		 * toMap(Function<? super Employee, ? extends Integer> keyMapper, Function<?
+		 * super Employee, ? extends String> valueMapper, BinaryOperator<String>
+		 * mergeFunction, Supplier<Map<Integer, String>> mapFactory)
 		 */
+		
 		LinkedHashMap<Integer, String> hashMapCollection = employees.stream()
 				.collect(Collectors.toMap(Employee::getId, Employee::getName, (k, v) -> k, LinkedHashMap::new));
 		System.out.println(hashMapCollection);
