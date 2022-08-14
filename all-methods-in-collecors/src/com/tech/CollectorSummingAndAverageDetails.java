@@ -44,6 +44,7 @@ public class CollectorSummingAndAverageDetails {
 		System.out.println("Average");
 		Map<String, Double> averages = employees.stream()
 				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingInt(Employee::getAge)));
+		
 		averages.forEach((k, v) -> {
 			System.out.println(k+" => " +v);
 		});
